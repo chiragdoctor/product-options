@@ -2,7 +2,7 @@ export interface IAttribute {
     id: string;
     type: string;
     value: string | boolean;
-    label: string;     
+    label: string;
 }
 
 export interface IProduct {
@@ -12,4 +12,8 @@ export interface IProduct {
     "item-description": string;
     attributes: IAttribute[],
     price: number;
+}
+
+export interface IColourFilterProps {
+    filter: IAttribute[]
 }
