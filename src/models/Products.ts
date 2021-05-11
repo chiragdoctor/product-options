@@ -39,3 +39,10 @@ export interface IInputRadioProps {
     value: string;
 }
 
+export interface IBasket {
+    total: number;
+    handleAddToBasket: any;
+    basket: IProduct[];
+    handleDeleteItem: any;
+}
+
