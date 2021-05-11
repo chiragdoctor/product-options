@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Project Overview
+ ## TechStack
+ - React  
+ - Material UI
+ - Jest 
+ - Enzyme
+ - Netlify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+ - We are using `productOptions.json` file to create filters dynamically. If we add another option like for e.g. yellow color in the attributes of another product then it will create a new option in Color Filter and similarly Paper type 
+ - Initially it will load the product based on the initial selection of the product (red, dotted, No Slipcase) on the product summary component  
+ - Once the filters are changed it will filter out the products and display appropriate product in ProductSummary Component. 
+ - Once the filters are selected product summary with the price will be displayed, user can add that product to basket and the basket price will be updated automatically. 
+ - Material-ui has been used designed components, in the Filters component we are using `useMediaQuery` hook to change the layout of the page based on the material-ui breakpoint
+ - It works for both desktop and mobile mode
+ - This app is created using React Hooks. 
+ - Instruction to use keyboard
+   - User can press `TAB` to move across the app
+   - Use can use `ARROW KEY` to select another color or paper type filter
+   - User can press `SPACE BAR` to switch between Slipcase option
+   - User can press `TAB` to go to basket component once it highlights Delete Icon then user can press `ENTER` to remove item from the basket
+   - User can again access `ADD TO BASKET` button by pressing `TAB` and press `ENTER` to add product to basket.     
+   
 
-## Available Scripts
+## Deployment 
+This app has also been deployed to Netlify, below is the access URL to Netlify 
+https://609a59f955268be075137b9f--productconfigurator.netlify.app/
 
-In the project directory, you can run:
-
+## To start project
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
+## To run unit test cases
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
