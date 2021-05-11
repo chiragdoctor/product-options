@@ -17,3 +17,25 @@ export interface IProduct {
 export interface IColourFilterProps {
     filter: IAttribute[]
 }
+
+export interface IFiltersProps {
+    handleInputChange: Function;
+    handleSlipcaseChange: Function;
+    colourValue: string;
+    paperTypeValue: string;
+    slipcaseValue: boolean;
+}
+
+
+export interface ISlipcaseProps {
+    handleSlipcaseChange: Function;
+    value: boolean;
+}
+
+export interface IInputRadioProps {
+    label: string;
+    data: IAttribute[];
+    handleInputChange: Function;
+    value: string;
+}
+

@@ -7,8 +7,22 @@ import Slipcase from './Slipcase';
 
 describe('Filters Component', () => {
     let wrapper: any;
+    let handleInputChangeSpy = jest.fn();
+    let handleSlipcaseChangeSpy = jest.fn();
+    let mockColourValue = 'red';
+    let mockPaperTypeValue = 'dotted';
+    let mockSlipcaseValue = false;
+
     beforeEach(() => {
-        wrapper = mount(<Filters />)
+        wrapper = mount(
+            <Filters
+                handleInputChange={handleInputChangeSpy}
+                handleSlipcaseChange={handleSlipcaseChangeSpy}
+                colourValue={mockColourValue}
+                paperTypeValue={mockPaperTypeValue}
+                slipcaseValue={mockSlipcaseValue}
+            />
+        )
     });
 
     it('should render the component', () => {
@@ -19,14 +33,14 @@ describe('Filters Component', () => {
     it('should render InputRadio for colours', () => {
         const radio = wrapper.find(InputRadio).first();
         expect(radio.exists()).toBe(true);
-        expect(radio.props().defaultValue).toBe('red');
+        expect(radio.props().value).toBe('red');
         expect(radio.props().label).toBe('Color');
     });
 
     it('should render InputRadio for paper type', () => {
         const radio = wrapper.find(InputRadio).at(1);
         expect(radio.exists()).toBe(true);
-        expect(radio.props().defaultValue).toBe('dotted');
+        expect(radio.props().value).toBe('dotted');
         expect(radio.props().label).toBe('Paper type');
     });
 

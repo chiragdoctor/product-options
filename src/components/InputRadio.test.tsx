@@ -1,14 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import InputRadio from './InputRadio';
-import { Radio } from '@material-ui/core';
+import { Radio, RadioGroup } from '@material-ui/core';
 
 
 describe('Input Radio Component', () => {
     let wrapper: any;
+    let handleInputChangeSpy = jest.fn();
     const props = {
         label: 'Colors',
-        defaultValue: 'red',
+        value: 'red',
         data: [
             {
                 "id": "cc1",
@@ -22,7 +23,8 @@ describe('Input Radio Component', () => {
                 "value": "blue",
                 "label": "Ocean"
             }
-        ]
+        ],
+        handleInputChange: handleInputChangeSpy
     }
     beforeEach(() => {
         wrapper = mount(<InputRadio {...props} />)
@@ -43,5 +45,12 @@ describe('Input Radio Component', () => {
         const radios = wrapper.find(Radio);
         expect(radios.exists()).toBe(true);
         expect(radios).toHaveLength(2);
+    });
+
+    it('should call handleInputChange onChange of radio button value', () => {
+        const radioGroup = wrapper.find(RadioGroup);
+        radioGroup.props().onChange({ target: { value: 'blue' } });
+        expect(props.handleInputChange).toHaveBeenCalledTimes(1);
+        expect(props.handleInputChange).toHaveBeenCalledWith(props.label, 'blue');
     });
 })
