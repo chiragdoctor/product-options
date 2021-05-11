@@ -5,6 +5,7 @@ import ProductConfigurator from './ProductConfigurator';
 import Filters from './Filters';
 import ProductSummary from './ProductSummary';
 import productOptions from '../data/productOptionsData.json';
+import Basket from './Basket';
 
 describe('Product Configurator Component', () => {
   let wrapper: any;
@@ -26,6 +27,11 @@ describe('Product Configurator Component', () => {
   it('should render Filter component', () => {
     const fc = wrapper.find(Filters);
     expect(fc.exists()).toBe(true);
+  });
+
+  it('should render Basket component', () => {
+    const basket = wrapper.find(Basket);
+    expect(basket.exists()).toBe(true);
   });
 
   it('should render red, dotted, without slipcase product at initial render', () => {

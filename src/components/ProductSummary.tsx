@@ -5,10 +5,10 @@ import { IProduct } from '../models/Products';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         title: {
-            paddingBottom: theme.spacing(4)
+            paddingBottom: theme.breakpoints.down('xs') ? theme.spacing(1) : theme.spacing(4)
         },
         pos: {
-            marginBottom: theme.spacing(8),
+            marginBottom: theme.breakpoints.down('xs') ? theme.spacing(2) : theme.spacing(8),
         }
     }),
 );
@@ -25,7 +25,7 @@ const ProductSummary = (props: IProductSummaryProps) => {
             <Grid item xs={12} sm={12} className={classes.title}>
                 <Typography variant='h5' >Product Summary</Typography>
             </Grid>
-            <Grid item xs={12} sm={10}>
+            <Grid item xs={12} sm={12}>
                 <Card>
                     <CardContent>
                         <Typography variant="h5">
